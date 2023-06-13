@@ -1,0 +1,28 @@
+*{
+    border: 1px solid red;
+}
+
+
+body{
+    background-color: antiquewhite;
+}
+h1{
+    color: brown;
+}
+h1:hover{
+    color: blue;
+    /* opacity: 0.5; */
+    cursor: pointer;
+}
+li{
+    list-style: square;
+    color: crimson;
+}
+li:hover{
+    font-weight: 800;
+    cursor: pointer;
+    color: blue;
+}
+.list{
+    border: 1px solid greenyellow;
+}

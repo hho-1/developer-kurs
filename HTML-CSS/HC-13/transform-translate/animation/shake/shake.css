@@ -1,0 +1,44 @@
+div{
+    text-align: center;
+}
+div i{
+    font-size: 10rem;
+    color: rgb(87, 118, 26);
+}
+
+@keyframes salla {
+    0%{
+        transform: rotate(15deg);
+        transform-origin: top;
+    }
+    
+    100%{
+        transform: rotate(-15deg);
+        transform-origin: top;
+    }
+}
+
+.fa-bell:hover{
+    animation-name: salla;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+.fa-dollar-sign{
+    animation: snake 0.5s ease-in-out infinite alternate;
+}
+
+.fa-dollar-sign:hover{
+    animation-play-state: paused;
+}
+
+@keyframes snake {
+    from{
+        transform: skew(45deg);
+    }
+    to{
+        transform: skew(-45deg);
+    }
+}

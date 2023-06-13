@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+}
+ul{
+    list-style-type: none;
+    background-color: beige;
+    padding: 1rem;
+    /* height: 50vh; */
+    display: flex;
+    flex-direction: row;    /* Ayni satira diz demek */ /* Burasi eger column yapilirsa x ekseni ile y ekseni yer degistirmis oluyor */
+    gap: 0 1rem;
+    flex-wrap: wrap;       /*Sayfa kücültüldügünde alta kaydir demek*/
+    justify-content: center;
+    align-items: center;
+
+}
+ul *{
+    background-color: aquamarine;
+}
+ul li{
+    padding: .5rem;
+    width: 6rem;
+    border-radius: 10px;
+    color: rgb(164, 4, 4);
+}
+.container{
+    background-color: aquamarine;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.container *{
+    background-color: rgb(217, 178, 21);
+}
+header{
+    flex-basis: 100%;    /* Kapsadigi alan demek */
+}
+footer{
+    flex-basis: 100%;
+}
+.left{
+    flex-grow: 1;
+    flex-basis: 100px;
+    flex-shrink: 0;    /* Ekrani kücültsem de hic daraltma demek */
+}
+.right{
+    flex-grow: 2;
+    flex-basis: 10%;
+}
+main{
+    flex-grow: 3;
+    flex-basis: 10%;
+}

@@ -1,0 +1,39 @@
+.outer{
+    background-color: antiquewhite;
+    width: 400px;
+    height: 400px;
+}
+.inner{
+    background-color: cadetblue;
+    width: 30%;
+    height: 30%;
+
+    /*animation: name  duration timing-function delay iteration-count direction fill-mode; tek satirda bu sekilde yapiliyor*/
+    animation-name: travel;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-delay: 1s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes travel {
+    0%{
+        transform: translate(0);
+    }
+    25%{
+        transform: translateY(100%);
+        border-radius: 50%;
+    }
+    50%{
+        transform: translate(100%, 100%);
+        
+    }
+    75%{
+        transform: translate(100%, 0%);
+        border-radius: 50%;
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

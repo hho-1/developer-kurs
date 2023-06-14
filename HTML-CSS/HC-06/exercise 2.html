@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercise.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="result.html">
+        <h1>Registration Form</h1>
+        <div>
+            <label class="in" for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label class="in" for="username">Username:</label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label class="in" for="password">Password:</label>
+            <input type="text" id="password">
+        </div>
+        <div>
+            <label class="in" for="age">Age:</label>
+            <input type="number" id="age">
+        </div>
+        <div>
+            <label class="in" for="email">Email:</label>
+            <input type="text" id="email">
+        </div>
+        <div>
+            <label class="in" for="mobile">Mobile:</label>
+            <input type="tel" id="mobile">
+        </div>
+        <div>
+            <label class="in" for="date">Date of Birth:</label>
+            <input type="date" id="date">
+        </div>
+        <br>
+        <!-- ........................................................................ -->
+        <div>
+            <div class="fieldsets-1">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <label for="female">Female</label>
+                    <input type="radio" id="female" name="gender">
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender">
+                </fieldset>
+            </div>
+            <div class="fieldsets-2">
+                <fieldset>
+                    <legend>Free Days</legend>
+                    <label for="saturday">Saturday</label>
+                    <input type="checkbox" id="saturday" name="free-days">
+                    <label for="sunday">Sunday</label>
+                    <input type="checkbox" id="sunday" name="free-days">
+                </fieldset>
+            </div>
+            
+        </div>
+        <br>
+        <!-- ........................................................................ -->
+        <div>
+            <div class="fieldsets-1">
+                <fieldset>
+                    <legend>Fav Color</legend>
+                    <input type="color">
+                </fieldset>
+            </div>
+            <div class="fieldsets-2">
+                <fieldset>
+                    <legend>Hobbies</legend>
+                    <select name="hobbies" id="hobbies">
+                        <option value="music">Music</option>
+                        <option value="dance">Dance</option>
+                        <option value="sport">Sport</option>
+                        <option value="theater">Theater</option>
+                    </select>
+                    
+                </fieldset>
+            </div>
+            
+        </div>
+        <br>
+        <!-- ........................................................................ -->
+
+        <div>
+            <div class="file">
+                <fieldset>
+                    <legend>Your Image</legend>
+                    <input type="file" id="image">
+                </fieldset>
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <div class="fieldsets-1">
+                <fieldset>
+                    <legend>Fav Sports</legend>
+                    <select name="fav-sports" id="fav-sports">
+                        <option value="football">Football</option>
+                        <option value="basketball">Basketball</option>
+                        <option value="handball">Handball</option>
+                        <option value="chess">Chess</option>
+                        <option value="volleyball">Volleyball</option>
+                    </select>
+                </fieldset>
+            </div>
+            <div class="fieldsets-2">
+                <fieldset>
+                    <legend>Country</legend>
+                    <input class="country" list="countries" name="" id="countries">
+                    <datalist id="countries">
+                        <option value="Germany"></option>
+                        <option value="ABD"></option>
+                        <option value="Belgium"></option>
+                        <option value="China"></option>
+                        <option value="Chile"></option>
+                    </datalist>
+                    
+                </fieldset>
+            </div>
+            
+        </div>
+        <!-- ........................................................................ -->
+        <br>
+        <div>
+            <textarea name="comment" id="comment" cols="55" rows="10" placeholder="Your comments" style="background-color: aliceblue;"></textarea>
+        </div>
+
+    </form>
+    
+    
+</body>
+</html>

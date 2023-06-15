@@ -31,7 +31,7 @@ console.log(avgPrice); */
 
 
 
-const productsByCategory = products.reduce((acc, product) => {
+/* const productsByCategory = products.reduce((acc, product) => {
     const category = product.category;
     if (!acc[category]) {
       acc[category] = [];
@@ -48,7 +48,7 @@ const productsByCategory = products.reduce((acc, product) => {
 
   const highPricedCategories = avgPriceByCategory.filter(category => category.average > 50);
 
-  console.log(highPricedCategories);
+  console.log(highPricedCategories); */
 
 
 

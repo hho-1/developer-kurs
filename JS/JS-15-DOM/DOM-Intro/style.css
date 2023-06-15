@@ -1,0 +1,18 @@
+.baslik{
+    background-color: tomato;
+    font-size: 2rem;
+    padding:1rem;
+}
+
+#btn{
+    background-color: cadetblue;
+    padding:1rem;
+    font-size: 2rem;
+
+}
+
+.yeniStil{
+    padding:2rem;
+    background-color: pink;
+    border:2px solid black;
+}

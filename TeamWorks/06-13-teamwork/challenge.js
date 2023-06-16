@@ -187,20 +187,32 @@ const productsByCategory = products.reduce((acc, product) => {
 
   //Now we are using map to calculate average grade level of all classes
 
-  const avgGradeByClass = Object.keys(studentsByClasses).map(classLev => {
-    const total = parseFloat(studentsByClasses[classLev].reduce((acc, student) => acc + student.totalGrade, 0));
+  const avgGradeByClass = Object.keys(studentsByClasses)
+  .map(classLev => {
+    const total = studentsByClasses[classLev].reduce((acc, student) => acc + parseFloat(student.totalGrade), 0);
     return { 
       classLevel: classLev, 
       classAverage: (total / studentsByClasses[classLev].length).toFixed(2) };
-  });
+  }); 
 
 console.log(avgGradeByClass);
 
-let max = 0;
-for(let i = 0; i < avgGradeByClass.length; i++){
-  if(Object.values(avgGradeByClass) > max) max = Object.values(avgGradeByClass);
-}
-console.log(max);
+
+
+const notes = avgGradeByClass.map((x) => x.classAverage)
+
+const highest = Math.max(...notes);
+
+const highestNoteClass = avgGradeByClass.filter((x) => {
+  if(parseFloat(x.classAverage) === highest){
+    return{
+      classLevel: x.classLevel,
+      highestNoteAverage : x.classAverage
+    }
+  }
+})
+console.log(highestNoteClass);
+
 
 
 

@@ -159,7 +159,7 @@ const productsByCategory = products.reduce((acc, product) => {
     { name: "Kumar", exam1: 80, exam2: 82, classLev: "12", hobby: "basketball" },
   ];
 
-  // a--- Add not average of all students to their objects (exam1 40%, exam2 60% effective)
+  // a--- Add grade total of all students to their objects (exam1 40%, exam2 60% effective)
 
   for(let i =0; i< students.length; i++){
     const totalGrade = (students[i].exam1 * 0.4 + students[i].exam2 * 0.6).toFixed(1)
@@ -197,6 +197,7 @@ const productsByCategory = products.reduce((acc, product) => {
 
 console.log(avgGradeByClass);
 
+//Now we are getting the class with highest grade average
 
 
 const notes = avgGradeByClass.map((x) => x.classAverage)
@@ -214,6 +215,65 @@ const highestNoteClass = avgGradeByClass.filter((x) => {
 console.log(highestNoteClass);
 
 
+console.clear()
+
+// c- Which hobby has the highest total-grade-average-students?
 
 
+const studentsbyHobbies = students.reduce((acc, student) =>{
+  const hobby = student.hobby;
+
+  if(!acc[hobby]){
+    acc[hobby] = []
+  }
+  acc[hobby].push(student);
+  return acc;
+},{})
+
+console.log(studentsbyHobbies);
+
+//Now we should find grades average of students in each hobby
+
+const avgGradeByHobby = Object.keys(studentsbyHobbies).map((hobby) => {
+  const aggregate = studentsbyHobbies[hobby].reduce((acc, student) => acc + parseFloat(student.totalGrade), 0)
+
+  return{
+    hobbyGroup: hobby,
+    hobbyAvg: (aggregate / studentsbyHobbies[hobby].length).toFixed(2)
+  }
+})
+console.log(avgGradeByHobby);
+
+//now we are reaching the hobby with the maximum grade average students
+
+const notes2 = avgGradeByHobby.map((x) => x.hobbyAvg)
+
+const highest2 = Math.max(...notes2);
+
+const highestNoteHobby = avgGradeByHobby.filter((x) => {
+  if(parseFloat(x.hobbyAvg) === highest2){
+    return{
+      hobbyGroup: x.hobbyGroup,
+      highestNoteAverage : x.hobbyAvg
+    }
+  }
+})
+console.log(highestNoteHobby);
+
+
+
+
+// d- Add an additional 10% to his/her grade and a new hobby as "hobby2: chess", if a student has total grade bigger than 80, 
+// Then print these students to console
+
+
+const extraStudents = students.filter((x) => {
+  if(x.totalGrade >= 80){
+    x.totalGrade = (1.1 * x.totalGrade).toFixed(1);
+    x.hobby2 = "chess";
+    
+    return x
+  }
+})
+console.log(extraStudents);
 

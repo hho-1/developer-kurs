@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    font-family: monospace;
+    color: black;
+    background-color: #fad961;
+    background-image: linear-gradient(119deg, #f5ab86 17%, #1ce2f7 92%);
+  }
+  
+  /* shake adında bir animasyon tanımla */
+  #shake-icon {
+    animation: shake 0.4s infinite;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px) rotate(-5deg);
+    }
+    75% {
+      transform: translateX(5px) rotate(5deg);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .secret-number,
+  .guess-input,
+  .btn {
+    font-size: 1.9rem;
+  }
+  
+  
+  
+  

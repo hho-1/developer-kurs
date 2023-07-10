@@ -1,0 +1,10 @@
+$primaryColor: yellow;
+$textColor: darkblue;
+
+body{
+    background-color: antiquewhite;
+    p{
+        color:$textColor;
+        background-color: $primaryColor;
+    }
+}

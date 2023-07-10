@@ -33,7 +33,7 @@ document.querySelector("input").oninput = (e) => {
   // console.log(document.querySelector("input").value);
 
   let yeniDizi = showList.meals.filter((a) =>
-    a.strMeal.toLowerCase().includes(e.target.value.toLowerCase)
+    a.strMeal.toLowerCase().includes(e.target.value.toLowerCase())
   );
 
   ekranaBastir(yeniDizi);

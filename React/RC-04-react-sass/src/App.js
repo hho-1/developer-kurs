@@ -1,9 +1,15 @@
 import React from "react"
+import "./App.scss"
+import Header from "./components/header/Header";
+import data from './data'
+import Card from "./components/card/Card";
+
 
 function App() {
   return (
     <div >
-   app
+   <Header/>
+   <Card veri ={data}/>
     </div>
   );
 }

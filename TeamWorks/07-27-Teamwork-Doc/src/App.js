@@ -9,9 +9,9 @@ const App = () => {
   
   return(
     <div>
-      <DynamicKey/>
+      {/* <DynamicKey/> */}
       <State/>
-      <Render/>
+      {/* <Render/> */}
     </div>
   )
 };

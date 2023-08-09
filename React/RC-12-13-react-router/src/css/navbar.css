@@ -1,0 +1,10 @@
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.page{
+    padding: 0 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}

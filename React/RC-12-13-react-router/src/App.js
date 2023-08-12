@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/courses" element={<CourseCard />} />
           <Route path="/courses/:name" element={<CardDetails/>}/>
           <Route path="/teacher" element={<Teacher />} />
-          <Route path="/teacher/:id" element={<TeacherDetails/>} />
+          <Route path="/teacher/:id" element={<TeacherDetails/>} />   {/* Teacher sayfasindan id gönderildi, burada karsiliyoruz. Burada id yerine baska bir sey de yazilabilir. */}
           <Route path="*" element={<NotFound/>}/>
 
 

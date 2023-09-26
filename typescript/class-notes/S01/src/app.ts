@@ -204,18 +204,11 @@ PrintMedia.Magazine; // returns 15 */
 // union type
 
 
-let d : string | number = 5
+function selamla(greet:string, name?:string):string{       //Burada opsiyonel olan ? alan parametreyi en sona yazman gerek
 
-d = 'hello'
-d = false
+    if(!name) name = 'user'
 
-function checkNumber(n: (string | number)):void {
-    //type narrowing
-    n.
-    if (typeof n == "number"){
-        n.
-    }else{
-        n.
-    }
-
+    return `${greet} ${name}`
 }
+console.log(selamla('Merhaba','Mark'));
+console.log(selamla('Hello'));

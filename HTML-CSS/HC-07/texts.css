@@ -1,0 +1,49 @@
+body{
+    padding: 10%;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 900;
+    background-image: linear-gradient(to right, orange, blue, pink);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.tcolor{
+    color: brown;
+    background-color: antiquewhite;
+}
+.alignment{
+    text-align: center;
+}
+.al{
+    width: 500px;
+}
+.text-deco{
+    text-decoration-color: blue;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    
+}
+
+.transform{
+    text-transform: capitalize;
+}
+.indent{
+    text-indent: 20px;
+}
+.spacing{
+    letter-spacing: 5px;
+    word-spacing: 10px;
+}
+.direction{
+    direction: rtl;
+
+}
+.line-height{
+    line-height: 2;
+}
+.shadow{
+    text-shadow: 3px 4px 3px lightblue;
+}

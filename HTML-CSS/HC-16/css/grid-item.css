@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);       /* 4 tane esit parcaya böl */
+    grid-template-rows: repeat(7, 1fr);
+    /*row-gap: 10px;
+    column-gap: 20px;
+    gap: 10px 20px; üstteki iki satirla ayni sey*/
+    gap: .3rem;
+}
+.content{
+    background-color: beige;
+    border: 1px solid red;
+    /* margin: 5px;
+    box-shadow: 5px 5px 5px black;
+    transition: all 0.2s; */
+}
+/* .content:active{
+    box-shadow: 0px 0px 0px black;
+    background-color: aquamarine;
+} */
+.content1{
+    background-color: teal;
+    grid-column-start: 1;         /*Birinci cizgiden ücüncü ciziye kadar*/
+    grid-column-end: 3;
+}
+.content2{
+    background-color: teal;
+    grid-column-start: 3;         /*3. cizgiden 5. ciziye kadar*/
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.content17{
+    grid-column: 2/4;
+    grid-row: 2/4;
+    background-color: azure;
+    background-image: url("https://picsum.photos/id/684/600/400");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.content5{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    background-color: goldenrod;
+}
+.content8{
+    background-color: hotpink;
+    grid-column: 4/5;
+    grid-row: 2/5;
+}
+.content14{
+    background-color: rgba(255, 68, 0, 0.568);
+    grid-column: 1/span 3;      /*Bu sekilde de tanimlanabiliyor*/
+    grid-row: 4/span 1;
+}
+.content3{
+    background-color: forestgreen;
+    grid-area: 4/2/6/4;   /* rowstart/colstart/rowend/colend sirasiyla   */
+    /*z-index: 1;           Ya bu sekilde ya da html'de öne alarak bunu üste cikarabilirsin*/
+}

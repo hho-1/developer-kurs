@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        ul{
+            /* padding: 0; */
+        }
+
+        .item{
+            /* list-style-type: georgian; */
+            /* list-style-position: inside; */
+            /* list-style-type: "\2764"; */
+            /* list-style-image: url(location.png); */
+        }
+
+        ul li::before{
+            /* content: "\2764"; */
+            /* color: red; */
+            /* content: "" */
+        }
+
+        ol{
+            list-style-type: none;
+            margin: 5px;
+            padding: 5px;
+        }
+        
+        ol li{
+            border: 1px solid red;
+            margin: 10px;
+            width: 15rem;
+            border-radius: 10px;
+            padding-left: 10px;
+            background-color: beige;
+            border-left: 7px solid gray;
+            color: brown;
+            opacity: 0.7;
+        }
+        ol li:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        ol li::before{
+            content: "harvey";
+        }
+        ol li::after{
+            content: "\5858";
+        }
+
+
+
+    </style>
+</head>
+<body>
+    list
+    <ul>
+        <li class="item item1">item1</li>
+        <li class="item item2">item2</li>
+        <li class="item item3">item3</li>
+        <li class="item item4">item4</li>
+        <li class="item item5">item5</li>
+        <li class="item item6">item6</li>
+    </ul>
+
+    <ol>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>Lorem ipsum dolor sit amet.</li>
+    </ol>
+</body>
+</html>

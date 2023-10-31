@@ -42,26 +42,26 @@ const HOST = process.env.HOST || '127.0.0.1'
 
 //? catch ile url parametreler
 
-app.get('/users/:userId(\\d+)/:userName(\\w+)', (req, res) => {
-    console.log(req.params);
-    res.send({
-        message: 'Parametreler calisiyor.',
-        userID: req.params.userId,
-        userName: req.params.userName,
-        protocol: req.protocol,
-        parameters: req.params,
-        baseURL: req.baseUrl,
-        path: req.path,
-        query: req.query,
-        subDom: req.subdomains
-    })
-  })
+// app.get('/users/:userId(\\d+)/:userName(\\w+)', (req, res) => {
+//     console.log(req.params);
+//     res.send({
+//         message: 'Parametreler calisiyor.',
+//         userID: req.params.userId,
+//         userName: req.params.userName,
+//         protocol: req.protocol,
+//         parameters: req.params,
+//         baseURL: req.baseUrl,
+//         path: req.path,
+//         query: req.query,
+//         subDom: req.subdomains
+//     })
+//   })
 
 
   //? Some useful response methods
 
 
-  app.get('/error', (req, res) => {
+  //app.get('/error', (req, res) => {
     // res.sendStatus(404)
     // res.status(404).send("New error message")
     // res.json({message: 'JSON formati'})
@@ -69,6 +69,25 @@ app.get('/users/:userId(\\d+)/:userName(\\w+)', (req, res) => {
     //res.send(__dirname)    //Dosya adini yazdirma
     // res.sendFile(__dirname + './app.js')
     // res.redirect('http://www.google.com')
-  })
+  //})
+
+  const sum = (req, res) => {
+    let a = req.query.firstNumber
+    let b = req.query.secondNumber
+
+    let aN = parseInt(a)
+    let bN = parseInt(b)
+
+    console.log(aN + bN);
+
+    return res.send({
+      sum: aN + bN,
+    })
+  }
+
+app.get('/', sum)
+
+// sum ayri bir fonksiyon olarak yazilmadan direkt olarak app.get'in icine de yazilabilir.
+
 
 app.listen(PORT,HOST, ()=>{console.log(`server is running on http://${HOST}:${PORT}`)})

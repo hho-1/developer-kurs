@@ -6,6 +6,18 @@ const mongoose = require('mongoose')
 const blogPostSchema = new mongoose.Schema(
     {
     //_id
+    userId: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true,
+        trim: true,
+    },
+    categoryId: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'BlogCategory',
+        required: true,
+        trim: true,
+    },
     title: {
         type: String,
         required: true,
@@ -17,12 +29,29 @@ const blogPostSchema = new mongoose.Schema(
     ,
     {   
         collection: 'blogPost', 
-        timestamp: true
+        timestamps: true
     }
 )
-const BlogPostModel = mongoose.model('BlogPost', blogPostSchema)
+const blogCategorySchema = new mongoose.Schema(
+    {
+    //_id
+    name: {
+        type: String,
+        required: true,
+        trim: true,
+    },
+    }
+    ,
+    {   
+        collection: 'blogCategories', 
+        timestamps: true
+    }
+)
+//const BlogPostModel = mongoose.model('BlogPost', blogPostSchema)
 module.exports = {
-    BlogPost: BlogPostModel
+    BlogPost: mongoose.model('BlogPost', blogPostSchema),
+    BlogCategory: mongoose.model('BlogCategory', blogCategorySchema),
+
 }
 
 /* const schemaName = new mongoose.Schema({

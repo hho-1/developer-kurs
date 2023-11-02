@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 8000
 require('./src/dbConnection')
 app.use(express.json())
 
-app.use('/', require('./src/routes/routesBlog'))
+app.use('/blog', require('./src/routes/routesBlog'))
+app.use('/user', require('./src/routes/routesUser'))
 
 
 

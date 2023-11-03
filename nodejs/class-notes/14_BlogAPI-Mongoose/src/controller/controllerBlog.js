@@ -13,6 +13,16 @@ module.exports.BlogPost = {
             count: data.length,
         })
     },
+    listCategoryPosts: async(req,res)=>{
+        
+        const data = await BlogPost.find({categoryId:req.params.categoryId}).populate("categoryId")       
+        
+        res.status(200).send({
+            error: false,
+            count: data.length,
+            result: data
+        })
+    },
     create: async(req, res) => {
         const data = await BlogPost.create(req.body)
 

@@ -23,6 +23,10 @@ router.route('/category/:categoryId')
     .get(BlogCategory.read)
     .put(BlogCategory.update)
     .delete(BlogCategory.delete)
+
+
+router.get('/post/:categoryId/posts', BlogPost.listCategoryPosts)
+    
     
     
     

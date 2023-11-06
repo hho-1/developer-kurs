@@ -69,8 +69,61 @@ module.exports.BlogCategory={
 module.exports.BlogPost={
 
     list: async(req,res)=>{
+    /* moved to searchSortPagination.js    
+        //? SEARCHING
+        // console.log(req.query)
+        // console.log(req.query.search)
+        const search=req.query?.search || {}
+
+        // const data = await BlogPost.find({title:'test 0 title'})
+        // const data = await BlogPost.find(search) // eşitlik araması yapar
+
+        // içinde araması için regex 
+        //https://www.mongodb.com/docs/manual/reference/operator/query/regex/
+        // { <field>: { $regex: 'pattern', $options: '<options>' } }
+        // const data = await BlogPost.find({title:{ $regex:'test 13',$options: 'i'}})
+        // const data = await BlogPost.find({title:{ $regex:search.title,$options: 'i'}})
+
+        // URL?search[key1]=value1&search[key2]=vaue2
+
+        // console.log('***before**')
+        // console.log(req.query.search)
+        for (let key in search) search[key]={$regex: search[key], $options: 'i'}
+        // console.log('***after**')
+        // console.log(req.query.search)
+              
+
+        //? SORTING
+        // URL?sort[key1]=1&sort[key2]=-1       (ASC=1,DESC=-1)
+        //http://127.0.0.1:8000/blog/post?sort[title]=-1&sort[content]=-1
+        const sort=req.query?.sort || {}
+        // console.log(req.query.sort)
+        
+        // const data = await BlogPost.find(search).sort(sort)
+
+        //? PAGE & LIMIT
+        console.log(req.query.limit)
+        console.log(req.query.page)
+
+        let limit=Number(req.query?.limit) 
+        limit= (limit>0 ? limit : (process.env.LIMIT || 10) )
+
+
+        let page=Number(req.query?.page) 
+        page= (page>0 ? page : 1) -1 
+                
+        let skip=Number(req.query?.skip) 
+        skip = skip >0 ? skip : (page*limit )
+
+        //http://127.0.0.1:8000/blog/post?limit=10&page=5
+        const data = await BlogPost.find(search).skip(skip).limit(limit).populate("categoryId")
+
+*/
+        
         // const data=await BlogPost
-        const data = await BlogPost.find().populate("categoryId")
+        //  const data = await BlogPost.find().populate("categoryId")
+
+        const data=await res.getMmodelList(BlogPost)
 
         res.status(200).send({
             error: false,

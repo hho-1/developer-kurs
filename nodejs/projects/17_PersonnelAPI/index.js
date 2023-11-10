@@ -13,8 +13,7 @@ const HOST = process.env.HOST || '127.0.0.1'
 //errorHandler
 require('express-async-errors')
 
-const {dbConnection} = require('./src/configs/dbConnection')
-dbConnection()
+require('./src/configs/dbConnection')
 
 app.use(express.json()) //middleware
 
@@ -25,8 +24,8 @@ app.all('/', (req, res) => {
     })
 })
 
-app.use('/departments', require('./src/routers/departmentRoutes'))
-app.use('/personnel', require('./src/routers/personnelRoute'))
+app.use('/departments', require('./src/routes/departmentRoute'))
+app.use('/personnel', require('./src/routes/personnelRoute'))
 
 app.use(require('./src/middlewares/errorHandler'))
 

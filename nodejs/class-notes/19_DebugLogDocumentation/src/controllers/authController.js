@@ -10,7 +10,21 @@ const Personnel=require('../models/personnelModel')
 
 module.exports={
     login: async(req,res)=>{
-        
+        /*
+            #swagger.tags = ['Authentication']
+            #swagger.summary = 'JWT: Login'
+            #swagger.description = 'Login with username and password'
+            _swagger.deprecated = true
+            _swagger.ignore = true
+            #swagger.parameters['body'] = {
+                in: 'body',
+                required: true,
+                schema: {
+                    username: 'test',
+                    password: '1234'
+                }
+            }
+        */
 
         // userdan username ve password al
         const {username,password}= req.body

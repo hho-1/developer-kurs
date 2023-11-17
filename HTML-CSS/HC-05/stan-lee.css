@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    
+    background-color: rgb(48, 46, 46, 0.815);
+    color: white;
+    width: 90%;
+    margin: auto;
+    border-radius: 30px;
+}
+
+.img-div{
+    text-align: center;
+}
+#image{
+    border-radius: 30px;
+    width: 400px;
+    box-shadow: 5px 5px 300px red;
+}
+.heading{
+    font-family: 'Lobster', cursive;  /* Bu kismi google fonts'dan aldik. lobster fontu icin*/
+}
+#title{
+    text-align: center;
+    font-size: 90px;
+}
+#span1{
+    color: red;
+}
+
+#info{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: justify;
+    font-size: 1.5rem;
+}
+#marvel{
+    color: red;
+    margin-left: 10%;
+}
+#liste{
+    font-size: 24px;
+    width: 80%;
+    margin: auto;
+    line-height: 3rem;
+}
+#footer{
+    text-align: center;
+    font-size: 30px;
+    padding: 2rem;
+}
+#link-button{
+    color: white;
+    border: 2px solid darkorange;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: black;
+    text-decoration: none;
+}
+#link-button:hover{
+    color: red;
+    background-color: rgb(63, 59, 59);
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Pathway+Gothic+One&display=swap');
+
+
+.liste{
+    margin-top: 3rem;
+}
+.main{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.question-answer{
+    width: 80%;
+    height: 9vh;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0 rgba(0,0,0,.75);
+    color: #f0f8ff;
+    margin: 1rem;
+    padding: 2rem;
+}
+.acik{
+    width: 100%;
+    height: fit-content;
+}
+.question-and-button{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question{
+    font-size: 1.6rem;
+    color: darkred;
+    font-family: Cinzel, serif;
+}
+button{
+    background: hsla(0,14%,99%,.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 2rem;
+    outline: none;
+    width: 2rem;
+}
+p {
+    font-family: Pathway Gothic One,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 3px;
+    text-align: justify;
+    text-indent: 1.25rem;
+}

@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+nav{
+    border: 1px solid red;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;    /* Yatayda ortalama */
+    align-items: center;        /* Dikeyde ortalama */
+    text-align: center;
+}
+nav .left, nav .middle{
+    width: 33%;
+}
+nav .left{
+    background-color: #bcccdc;
+    box-shadow: 2px 2px 20px black;
+}
+nav .left img{
+    width: 50px;
+    height: 40px;
+}
+nav .middle{
+    background-color: #ebf7ff;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 10px;
+    display: flex;
+}
+nav .middle .item{
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+nav .right{
+    background-color: #bcccdc;
+    box-shadow: 2px 2px 20px black;
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex: 1 0 0;
+    justify-content: space-evenly;
+}
+nav .right i{
+    color: black;
+    font-size: 3rem;
+}
+header{
+    margin-top: 50px;
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.img img{
+    width: 20rem;
+}
+.img{
+    background-color: antiquewhite;
+    flex-basis: 100%;
+    flex: 0;
+    order: 2;     /* Bunu ikinci siraya al demek */
+}
+.text{
+    line-height: 2rem;
+    /* flex-basis: 300px; */
+    flex: 1;
+    order: 1;     /* Bunu birinci siraya al demek */
+}

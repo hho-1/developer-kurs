@@ -1,0 +1,25 @@
+/* div p{
+    color: red;
+} */
+
+/* .container div p{
+    color: magenta;
+} */
+
+/* p+div{
+    color: blue;
+}
+*/
+div+p{
+    background-color: cyan;
+} 
+
+div>p{
+    color: blueviolet;
+}
+p>span{
+    background-color: orange;
+}
+
+
+/*Bundan sonrasini yazmadim. Hocanin ders notlarindan bakabilirsin */

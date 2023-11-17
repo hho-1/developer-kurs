@@ -1,0 +1,21 @@
+@import "./variable";
+
+.btn-div{
+    
+    button{
+        color: white;
+        margin-top: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+    &-small{
+        background-color: $turuncu;
+        padding: .3rem 1rem;
+    }
+    &-large{
+        background-color: $lightGreen;
+        padding: .5rem 2rem;
+        color: #000 !important;
+        font-size: 1.3rem;
+    }
+}

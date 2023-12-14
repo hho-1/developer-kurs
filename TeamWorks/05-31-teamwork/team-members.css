@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(244, 244, 244);
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.header h1{
+    width: 40%;
+    font-size: 3rem;
+}
+.header h3{
+    width: 60%;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.members img{
+    width: 250px;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+    transition: all 1s ease-in-out;
+}
+.members img:hover{
+    box-shadow: 2px 2px 20px lightblue;
+}
+.members{
+    width: 33.33%;
+    justify-content: center;
+    position: relative;
+    transition: all 1s ease-in-out; 
+}
+.members:hover{
+    transform: scale(1.1);
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.rotate{
+    position: absolute;
+    color: black;
+    transform: rotate(90deg);
+}
+.card1, .card2, .card3, .card4, .card5, .card6{
+    position: relative;
+    width: 250px;
+    font-weight: 600;
+    /* border: 2px solid red; */
+    width: 600px;
+    text-align: center;
+}
+.card2, .card5{
+    margin-top: 10rem;
+}
+.card1 .rotate{
+    right: 80px;
+    top: 70px;
+}
+.card2 .rotate{
+    right: 90px;
+    top: 60px;
+}
+.card3 .rotate{
+    right: 100px;
+    top: 45px;
+}
+.card4 .rotate{
+    right: 100px;
+    top: 50px;
+}
+.card5 .rotate{
+    right: 100px;
+    top: 45px;
+}
+.card6 .rotate{
+    right: 100px;
+    top: 45px;
+}
+.member_name{
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px){
+    .header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header h1{
+        width: 100%;
+    } 
+    .container{
+        column-gap: 90px;
+        justify-content: center;
+    }
+    .card2, .card5{
+        margin-top: 0rem;
+    }
+    .card1, .card2, .card3, .card4, .card5, .card6{
+        margin-top: 50px;
+        width: 400px;
+    }
+    .card1 .rotate{
+        right: -10px;
+        top: 70px;
+    }
+    .card2 .rotate{
+        right: -10px;
+        top: 60px;
+    }
+    .card3 .rotate{
+        right: 0px;
+        top: 45px;
+    }
+    .card4 .rotate{
+        right: 0px;
+        top: 50px;
+    }
+    .card5 .rotate{
+        right: 0px;
+        top: 45px;
+    }
+    .card6 .rotate{
+        right: 0px;
+        top: 45px;
+    }
+
+}
+
+@media screen and (max-width: 800px){
+    .container{
+        column-gap: 0;
+        flex-direction: column;
+    }
+    .card1, .card2, .card3, .card4, .card5, .card6{
+        margin-top: 50px;
+        width: 300px;
+    }
+    .rotate{
+        right: -50px;
+        padding-bottom: 90px;
+    }
+    .card1 .rotate{
+        top: 40px;
+    }
+    .card2 .rotate{
+        top: 40px;
+    }
+    .card3 .rotate{
+        top: 25px;
+    }
+    .card4 .rotate{
+        top: 30px;
+    }
+    .card5 .rotate{
+        top: 25px;
+    }
+    .card6 .rotate{
+        top: 25px;
+    }
+}
+

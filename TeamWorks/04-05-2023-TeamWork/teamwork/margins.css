@@ -1,0 +1,66 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap');
+
+*{
+    margin: 0;
+}
+body{
+    width: 55%;
+    margin: auto;
+    background-color: gray;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: #E8D6D0;
+}
+
+.logo{
+    text-align: center;
+}
+#logo{
+    max-width: 190px;
+    max-height: 190px;
+    border: 5px solid black;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+.main{
+    width: 70%;
+    border: 5px solid black;
+    margin: auto;
+    background-color: #D56561;
+    text-align: center;
+    padding-bottom: 40px;
+    margin-top: -100px;
+}
+
+.heading{
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+span{
+    color: yellow;
+}
+.text{
+    font-size: 50px;
+    margin: 20px 20px;
+    color: #4A3A3B;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+}
+.footer{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+#footer{
+    font-size: 25px;
+    color: #A10085;
+}

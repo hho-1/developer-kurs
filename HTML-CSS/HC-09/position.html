@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .main{
+            background-color: aquamarine;
+            width: 90%;
+            padding: 5px;
+            height: 2000px;
+            position: relative;
+        }
+
+        .box1{
+            background-color: aliceblue;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            z-index: 2;
+        }
+        .box2{
+            background-color:bisque ;
+            width: 100px;
+            height: 100px;
+            /* position: relative;
+            top: 20px;
+            left: 30px; */
+            position: relative;
+            margin-top: -40px;
+            z-index: 3; /* Bunu en öne getirecek*/
+        }
+        .box3{
+            background-color: rgba(173, 234, 59, 0.7);
+            width: 100px;
+            height: 100px;
+            position: relative;
+            /* margin-top: 30px;
+            margin-left: 50px; */
+            margin-top: -80px;
+            z-index: 1;
+        }
+        .box4{
+            background-color: rgba(223, 160, 244, 0.8);
+            width: 100px;
+            height: 100px;
+            position: absolute; /*Akistan cikti, yazi üstüne gelecek*/
+        }
+        .box5{
+            background-color: rgba(137, 229, 246, 0.8);
+            width: 100px;
+            height: 100px;
+            position: fixed; /*Sayfa ne kadar kayarsa kaysin yerinde kalacak. Navbar yapmak mantikli bununla*/
+        }
+        p{
+            background-color: cornsilk;
+            border-radius: 25px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: sticky;/*Üstten 50px kalan kadar yukari kayabilir demek. yapiskan manasinda. Bir üst parentina göre konuma liyor. onunla beraber en sonunda kayip gidiyor.*/
+            top: 50px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nemo qui, officia sint temporibus libero commodi cumque doloremque, odio, veniam consectetur architecto animi eveniet? Suscipit, tempora nisi. Corporis, veritatis ipsum.</p>
+
+
+    </div>
+</body>
+</html>

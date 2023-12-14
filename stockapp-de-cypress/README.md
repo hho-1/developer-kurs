@@ -2,7 +2,7 @@
 
 # Formik ve Yup
 
-***“Build forms in React, without the tears.”***
+“Build forms in React, without the tears.”
 
 Gözyaşları olmadan reactta formlşar oluşturun.
 

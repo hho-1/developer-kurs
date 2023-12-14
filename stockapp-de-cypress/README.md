@@ -242,6 +242,8 @@ const [products, categories, brands] = await Promise.all([//? promiseların sır
 
 Bu örnekte, `/api/profile` ve `/api/photo` endpoint'lerine yönelik iki farklı Axios isteği gerçekleştirilir. Her bir istek bir Promise nesnesi olarak döndürülür ve bu Promise nesneleri, Promise.all() metoduna parametre olarak verilir. Promise.all() metodunun geri dönüş değeri, her bir Promise nesnesinin sonucunu içeren bir dizi olacaktır. Bu dizi, `[profileResponse, photoResponse]` şeklinde bir değişkene atılır ve sonuçlar kullanılarak bir şeyler yapılır.
 
-Daha fazla bilgi için, Promise.all() metodunun resmi dokümantasyonuna göz atabilirsiniz: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#   s t o c k a p p - d e - c y p r e s s - s t a r t e r  
- #   s t o c k a p p - d e - c y p r e s s - s t a r t e r  
+Daha fazla bilgi için, Promise.all() metodunun resmi dokümantasyonuna göz atabilirsiniz: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all#   s t o c k a p p - d e - c y p r e s s - s t a r t e r 
+ 
+ #   s t o c k a p p - d e - c y p r e s s - s t a r t e r 
+ 
  # stockapp-de-cypress

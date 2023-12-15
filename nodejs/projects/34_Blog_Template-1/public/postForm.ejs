@@ -7,7 +7,7 @@
             <p>
                 <a class="btn btn-sm btn-secondary" href="/">Go Home</a>
             </p>
-            <h1>{%= post?.title || 'New Blog Post' %}</h1>
+            <h1>{%= post?.title || '# New Blog Post' %}</h1>
             <form action="" method="POST">
                 <table class="table table-striped">
                     <thead>
@@ -21,11 +21,9 @@
                             <td>Category</td>
                             <td>
                                 <select name="blogCategoryId" class="form-select">
-                                    <option value="1">CategoryName</option>
-                                    <option value="1">CategoryName</option>
-                                    <option value="1">CategoryName</option>
-                                    <option value="1">CategoryName</option>
-                                    <option value="1">CategoryName</option>
+                                    {% blogCategories.map((blogCategory) => { %}
+                                    <option value="{%= blogCategory.id %}" {%= post?.blogCategoryId == blogCategory.id ? 'selected' : '' %}>{%= blogCategory.name %}</option>
+                                    {% }) %}
                                 </select>
                             </td>
                         </tr>
@@ -36,21 +34,21 @@
                         <tr>
                             <td>Content</td>
                             <td>
-                                <textarea name="content" class="form-control">{%= post?.content %}</textarea>
+                                <textarea id="tinymceEditor" name="content" class="form-control">{%= post?.content %}</textarea>
                             </td>
                         </tr>
                         <tr>
                             <td>Published</td>
                             <td>
                                 <select name="published" class="form-select">
-                                    <option value="0" {%= post.published ? '' : 'selected' %}>No</option>
-                                    <option value="1" {%= post.published ? 'selected' : '' %}>Yes</option>
+                                    <option value="0" {%= post?.published ? '' : 'selected' %}>No</option>
+                                    <option value="1" {%= post?.published ? 'selected' : '' %}>Yes</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Created</td>
-                            <td>{%= post.createdAt.toUTCString() %}</td>
+                            <td>{%= post?.createdAt.toUTCString() %}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -62,5 +60,16 @@
     </div>
 </main>
 <!-- main end -->
+<!-- Script element sourcing TinyMCE -->
+<script type="application/javascript" src= "/tinymce/tinymce.min.js"></script>
+<!-- Script element sourcing the TinyMCE configuration -->
+<script type="application/javascript">
+    // https://www.tiny.cloud/docs/configure
+    tinymce.init({
+        selector: 'textarea#tinymceEditor',
+        plugins: 'lists link image table code wordcount',
+        height: 750
+    });
+</script>
 
 {%- include('incFooter') %}

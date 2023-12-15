@@ -1,14 +1,11 @@
-{%- include('_incHeader') %}
+{%- include('incHeader') %}
 
         <!-- Blog Categories -->
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
-                
-                {% for (let category of categories){ %}
-                <a class="nav-item nav-link link-body-emphasis" href="?filter[blogCategoryId]={%= category.id%}">{%= category.name %}</a>
-            {% }  %}
-                
-                
+                {% for (let category of categories) { %}
+                <a class="nav-item nav-link link-body-emphasis" href="?filter[blogCategoryId]={%= category.id %}">{%= category.name %}</a>
+                {% } %}
             </nav>
         </div>
     </div>
@@ -16,43 +13,47 @@
     <main class="container">
         <div class="row g-5">
             <div class="col-md-8">
+                {% if (user) { %}
                 <div class="admin-area text-end">
                     <a class="btn btn-primary" href="/post/create">New Post</a>
                 </div>
+                {% } %}
                 <h3 class="pb-4 fst-italic border-bottom">
                     Welcome to my blog site.
                 </h3>
                 <!-- BlogPosts -->
-                {% for(let post of posts) { %}
-                    <article class="blog-post">
-                        <h2 class="display-5 mb-1">
-                            <a href="/post/{%= post.id %}" class="link-body-emphasis text-decoration-none">{%= post.title %}</a>
-                        </h2>
-                        <p class="blog-post-meta">{%= post.createdAt.toUTCString() %}</p>
-                        <p>{%- post.content.substring(0, 500) %} ... read more...</p>
+                {% for (let post of posts) { %}
+                <article class="blog-post">
+                    <h2 class="display-5 mb-1">
+                        <a href="/post/{%= post.id %}" class="link-body-emphasis text-decoration-none">{%= post.title %}</a>
+                    </h2>
+                    <p class="blog-post-meta">{%= post.createdAt.toUTCString() %}</p>
+                    {%- post.content.substring(0, 500) %} ...read more...
+                    {% if (user) { %}
                     <div class="admin-area text-end">
                         <a class="btn btn-sm btn-primary" href="/post/{%= post.id %}/update">Update</a>
                         <a class="btn btn-sm btn-danger" href="/post/{%= post.id %}/delete" onclick="return confirm('Are you sure?')">Delete</a>
                     </div>
-                    </article>
+                    {% } %}
+                </article>
                 {% } %}
-                
-                
                 <!-- Pagination -->
-                {%  if(details.pages) { %}
-                    <nav class="blog-pagination" aria-label="Pagination">
-
-                        <a class="btn btn-outline-secondary rounded-pill {%= details.pages.previous ? '' : 'disabled' %}" href="{%= pageUrl %}&page=1">&laquo;</a>
-                        <a class="btn btn-outline-secondary rounded-pill {%= details.pages.previous ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.previous %}">&larr;</a>
-                        {% for(let pageNo=1; pageNo<= details.pages.total; pageNo++) { %}
-                        <a class="btn btn-{%= pageNo == details.pages.current ? 'primary' : 'outline-secondary' %} rounded-pill" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>
-                        {% } %}
-                        <a class="btn btn-outline-secondary rounded-pill {%= details.pages.next ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.next %}">&rarr;</a>
-                        <a class="btn btn-outline-secondary rounded-pill {%= details.pages.next ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.total %}">&raquo;</a>
-                
-                    </nav>
+                {% if (details.pages) { %}
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <!-- first page -->
+                    <a class="btn btn-outline-secondary rounded-pill {%= details.pages.previous ? '' : 'disabled' %}" href="{%= pageUrl %}&page=1">&laquo;</a>
+                    <!-- previous page -->
+                    <a class="btn btn-outline-secondary rounded-pill {%= details.pages.previous ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.previous %}">&larr;</a>
+                    <!-- pages -->
+                    {% for (let pageNo=1; pageNo <= details.pages.total; pageNo++) { %}
+                    <a class="btn btn-{%= (pageNo==details.pages.current ? 'primary' : 'outline-secondary') %} rounded-pill" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>
+                    {% } %}
+                    <!-- next page -->
+                    <a class="btn btn-outline-secondary rounded-pill {%= details.pages.next ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.next %}">&rarr;</a>
+                    <!-- last page -->
+                    <a class="btn btn-outline-secondary rounded-pill {%= details.pages.next ? '' : 'disabled' %}" href="{%= pageUrl %}&page={%= details.pages.total %}">&raquo;</a>
+                </nav>
                 {% } %}
-                
                 <p class="text-end p-2 border-top">Total {%= details.totalRecords %} Posts</p>
             </div>
             <div class="col-md-4">
@@ -62,21 +63,17 @@
                         <ul class="list-unstyled">
                             <!-- Recent posts -->
                             {% for (let recentPost of recentPosts) { %}
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                        href="/post/{%= recentPost.id %}">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="/post/{%= recentPost.id %}">
                                     <div class="col-lg-8">
                                         <h5>{%= recentPost.title %}</h5>
-                                        <p class="my-2">{%= recentPost.content.replace(/<(.|\n)*?>/g, "").substring(0, 60) %} ...read more</p>
-                                        <small class="text-body-secondary">{%= recentPost.createdAt.toUTCString('tr') %}</small>
+                                        <p class="my-2">{%= recentPost.content.replace(/<(.|\n)*?>/g, '').substring(0, 100) %}...</p>
+                                        <small class="text-body-secondary">{%= recentPost.createdAt.toUTCString() %}</small>
                                     </div>
                                 </a>
                             </li>
-
                             {% } %}
-                            
-                            
-                            
                         </ul>
                     </div>
                 </div>
@@ -84,5 +81,5 @@
         </div>
     </main>
     <!-- main end -->
-    
-{%- include('_incFooter') %}
+
+{%- include('incFooter') %}

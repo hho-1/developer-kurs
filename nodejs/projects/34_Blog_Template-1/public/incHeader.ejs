@@ -25,8 +25,15 @@
                 <div class="col-4 text-center">
                     <a class="blog-header-logo text-body-emphasis text-decoration-none" href="/">MY BLOG</a>
                 </div>
+                {% if (user) { %}
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <label class="px-2">{%= user.email %}</label>
+                    <a class="btn btn-sm btn-outline-secondary" href="/logout">Logout</a>
+                </div>
+                {% } else { %}
                 <div class="col-4 d-flex justify-content-end align-items-center">
                     <a class="btn btn-sm btn-outline-secondary" href="/login">Login</a>
                 </div>
+                {% } %}
             </div>
         </header>

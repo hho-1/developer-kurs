@@ -22,36 +22,46 @@ const PORT = process.env.PORT || 8000
 const session = require("cookie-session")
 app.use(session({ secret: process.env.SECRET_KEY || 'secret_keys_for_cookies' }))
 /* ------------------------------------------------------- */
-//TEMPLATE:
+// TEMPLATE:
+// $ npm i ejs
 
 // const ejs = require('ejs')
-// ejs.delimiter = '*'        //% yerine * kullanmak icin
-// ejs.openDelimiter = '{'    //< yerine { kullanmak icin
-// ejs.closeDelimiter = '}'    //> yerine } kullanmak icin
-
+// // default using in template: <% JSCodes %>
+// ejs.delimiter = '*' // default: %
+// ejs.openDelimiter = '{' // default: <
+// ejs.closeDelimiter = '}' // default: >
 
 app.set('view engine', 'ejs')
 app.set('views', './public')
 app.set('view options', {
-    openDelimiter: '{',          //üstteki ayarin kisa yolu
-    closeDelimiter: '}'
+    openDelimiter: '{',
+    closeDelimiter: '}',
 })
 
+// Accept form data & convert to object:
+app.use(express.urlencoded({ extended: true }))
 
-//Accept form data & convert to object
-app.use(express.urlencoded({ extended: true}))
-
-//Call staticFiles
+// Call staticFiles:
 app.use('/assets', express.static('./public/assets'))
+// TinyMCE static files:
+app.use('/tinymce', express.static('./node_modules/tinymce'))
 
-/* ----------------------------------------------------- */
+/* ------------------------------------------------------- */
 // Accept json data & convert to object:
 app.use(express.json())
 
-
-
 // Connect to MongoDB with Mongoose:
 require('./src/dbConnection')
+
+app.use((req, res, next) => {
+
+    // FOR TEMPLATES: Check user from session and set to locals:
+    // Global variables for templates:
+    res.locals.user = req.session?.user
+
+    next()
+
+})
 
 // Searching&Sorting&Pagination:
 app.use(require('./src/middlewares/findSearchSortPage'))
